@@ -1,0 +1,43 @@
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+
+        &:first-child {
+        background-color: #6c757d; 
+
+        &:hover,
+        &.active {
+            background-color: #495057;
+        }
+        }
+
+        &:nth-child(2) {
+        background-color: #28a745; 
+
+        &:hover,
+        &.active {
+            background-color: #218838;
+        }
+    }
+
+    &:last-child{
+        background-color: #007bff; 
+        &:hover,
+        &.active {
+        background-color: #0056b3;
+        }
+
+    }
+  }
+}

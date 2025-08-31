@@ -1,0 +1,38 @@
+<div class="todo-container">
+    <h2>Todo App</h2>
+
+    <div class="todo-input">
+        <input type="text" [(ngModel)]="newTask"  placeholder="Add A New Task"/>
+        <button (click)="addNewTask()">Add</button>
+    </div>
+
+    <app-filter-buttons (filterChange)="onFilterChange($event)" [currentFilter]="filter"></app-filter-buttons>
+
+    <h3>Todo List</h3>
+    <div class="todo-list">
+        <ul>
+            @for (task of getFilteredTasks(); track task.id; let i=$index){
+                <li class="todo-item">
+                    <input type="checkbox" [(ngModel)]="task.completed">
+                    
+                    <!-- Edit Mode -->
+                    <ng-container *ngIf="editingIndex===i;  else viewModel">
+                        <input type="text" [(ngModel)]="editingTitle">
+                        <button (click)="saveEdit(i)">Save</button>
+                        <button (click)="cancelEdit()">Cancel</button>
+                    </ng-container>
+
+                    <!-- normal Mode -->
+                    <ng-template   #viewModel>
+                        <span [class.completed]="task.completed">{{task.title}}</span>
+                        <button (click)="editTask(i)">Edit</button>
+                        <button (click)="deleteTask(i)">Delete</button>
+                    </ng-template>
+
+                </li>
+            }@empty{
+                <li class="no-task">No tasks available</li> 
+            }
+        </ul>
+    </div>
+</div>

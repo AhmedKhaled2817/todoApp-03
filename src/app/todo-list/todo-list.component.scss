@@ -1,0 +1,112 @@
+.todo-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    
+    h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    }
+    
+    .todo-input {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+        input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            
+            &:focus {
+                border-color: #007bff;
+            }
+        
+        }
+
+    button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+        
+        &:hover {
+            background: #0056b3;
+        }
+    }
+
+}
+
+.todo-list {
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        
+        input[type='checkbox'] {
+            accent-color: #28a745;
+        }
+            span {
+                margin: 0;
+                font-size: 16px;
+                color: #333;
+                &.completed {
+                    text-decoration: line-through;
+                    color: #888;
+                }
+            } 
+            button{
+                padding: 6px 12px;
+                border: none;
+                border-radius: 0.4rem;
+                cursor: pointer;
+                transition: 0.4s ease-in-out;
+
+                &:first-of-type{
+                    background-color:  #007bff;
+                    color: #fff;
+
+                    &:hover{
+                        background-color:  #0056b3 ;
+                    }
+                }
+
+                &:last-of-type{
+                    background-color:  #ff1900be;
+                    color: #fff;
+                    &:hover{
+                        background-color:#ff0000;
+                    }
+                }
+            } 
+
+    }
+
+    }
+    .no-task{
+        color: #888;
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+  }
+
+}
