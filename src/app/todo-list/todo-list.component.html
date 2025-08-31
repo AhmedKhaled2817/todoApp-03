@@ -7,6 +7,9 @@
     </div>
 
     <app-filter-buttons (filterChange)="onFilterChange($event)" [currentFilter]="filter"></app-filter-buttons>
+    <div class="sort-buttons">
+        <button (click)="bubbleSortTasks()">Sort by Tilte From A to Z </button>
+    </div>
 
     <h3>Todo List</h3>
     <div class="todo-list">
@@ -14,7 +17,7 @@
             @for (task of getFilteredTasks(); track task.id; let i=$index){
                 <li class="todo-item">
                     <input type="checkbox" [(ngModel)]="task.completed">
-                    
+
                     <!-- Edit Mode -->
                     <ng-container *ngIf="editingIndex===i;  else viewModel">
                         <input type="text" [(ngModel)]="editingTitle">

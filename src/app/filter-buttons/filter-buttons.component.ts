@@ -13,4 +13,5 @@ export class FilterButtonsComponent {
   setFilter(type:string){
     this.filterChange.emit(type);
   }
+  
 }
