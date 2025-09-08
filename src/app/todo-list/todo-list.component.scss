@@ -61,7 +61,16 @@
         padding: 10px;
         border-radius: 6px;
         border: 1px solid #eee;
-        
+        gap: 8px;
+
+        span, input[type='text'] {
+        flex: 1;                
+        min-width: 0;           
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;   
+    }
+
         input[type='checkbox'] {
             accent-color: #28a745;
         }
@@ -80,6 +89,7 @@
                 border-radius: 0.4rem;
                 cursor: pointer;
                 transition: 0.4s ease-in-out;
+                flex-shrink: 0;        
 
                 &:first-of-type{
                     background-color:  #007bff;
@@ -127,3 +137,6 @@
 }
 
 }
+
+
+

@@ -20,7 +20,7 @@
 
                     <!-- Edit Mode -->
                     <ng-container *ngIf="editingIndex===i;  else viewModel">
-                        <input type="text" [(ngModel)]="editingTitle">
+                        <input type="text" [(ngModel)]="editingTitle" >
                         <button (click)="saveEdit(i)">Save</button>
                         <button (click)="cancelEdit()">Cancel</button>
                     </ng-container>
